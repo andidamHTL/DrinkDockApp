@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drink Dock - Trink anders</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            background-color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+        header img {
+            max-width: 150px;
+        }
+        main {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 24px;
+            color: #444;
+        }
+        p {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        .order-btn, .scan-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 20px 10px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .scan-btn {
+            background-color: #2196F3;
+        }
+        .order-btn:hover {
+            background-color: #45a049;
+        }
+        .scan-btn:hover {
+            background-color: #1e88e5;
+        }
+        .payment-methods {
+            margin: 20px 0;
+        }
+        .payment-methods img {
+            max-width: 60px;
+            margin: 0 10px;
+            vertical-align: middle;
+        }
+        footer {
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="icons/DrinkDockLogo.png" alt="Drink Dock Logo">
+    </header>
+    <main>
+        <h1>Willkommen bei Drink Dock!</h1>
+        <p class="info">Du bist an Tisch <span id="table-number"></span>.</p>
+        <a href="zahlung.html" class="order-btn">Bestellen</a>
+    
+        <p>Bequem bezahlen mit:</p>
+        <div class="payment-methods">
+            <img src="icons/paypal.png" alt="PayPal">
+            <img src="icons/applepay.png" alt="Apple Pay">
+            <img src="icons/googlepay.png" alt="Google Pay">
+        </div>
+    </main>
+    <footer>
+        &copy; 2024 Drink Dock. Alle Rechte vorbehalten.
+    </footer>
+
+
+    <script>
+        // Beispiel: Tischnummer aus der URL holen
+        const urlParams = new URLSearchParams(window.location.search);
+        const tableNumber = urlParams.get('tisch') || 'Unbekannt';
+        document.getElementById('table-number').innerText = tableNumber;
+    </script>
+</body>
+</html>
